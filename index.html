@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Best Friends</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h1>Список моих лучших друзей</h1>
+  </header>
+  <main>
+    <div class="card" id="artem">
+      <img src="images/artem.png" alt="Артём">
+      <h3>Артём</h3>
+    </div>
+    <div class="card" id="sonya">
+      <img src="images/sonya.png" alt="Соня">
+      <h3>Соня</h3>
+    </div>
+    <div class="card" id="leonid">
+      <img src="images/leonid.png" alt="Леонид">
+      <h3>Леонид</h3>
+    </div>
+    <div class="card" id="stonix">
+      <img src="images/stonix.png" alt="Стоникс">
+      <h3>Стоникс</h3>
+    </div>
+    <div class="card" id="timofey">
+      <img src="images/timofey.jpg" alt="Тимофей">
+      <h3>Тимофей</h3>
+    </div>
+  </main>
+  <footer>
+    <div id="furry">
+      <img src="images/furry-icon.png" alt="Фурри" class="furry-icon">
+      <button id="furryButton">Нажми, если ты Фурри</button>
+    </div>
+  </footer>
+
+  <!-- Модальное окно -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <img id="modalImage" src="" alt="Фото друга" class="modal-image">
+      <h2 id="modalTitle">Заголовок</h2>
+      <p id="modalText">Здесь будет информация о вашем друге.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
