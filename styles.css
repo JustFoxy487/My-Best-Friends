@@ -1,0 +1,299 @@
+/* Глобальные стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  color: #333;
+}
+
+/* Контейнер */
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Карточки друзей */
+.friends {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.friend-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.friend-card:hover {
+  transform: scale(1.05);
+}
+
+.friend-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friend-card h2 {
+  margin: 10px 0 0;
+  font-size: 16px;
+}
+
+/* Кнопка "Фурри" */
+.furry-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.furry-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.furry-button {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.furry-button:hover {
+  background: #e60000;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  position: relative;
+  animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.popup h2 {
+  margin: 0 0 10px;
+}
+
+.popup p {
+  margin: 0;
+}
+
+/* Базовые стили */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: background-color 1s ease;
+}
+
+/* Кнопка переключения темы */
+.theme-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.theme-switcher:hover {
+  transform: scale(1.1);
+}
+
+/* Звездное небо */
+body.dark .sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(10, 10, 20, 1) 10%, rgba(0, 0, 40, 1) 100%);
+  z-index: -1;
+  animation: fadeIn 2s ease;
+}
+
+body.dark .sky:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 255, 200, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 200, 0.5);
+}
+
+/* Светлая тема: небо, солнце и холмы */
+body.light .sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #87ceeb, #b4e391);
+  z-index: -1;
+  animation: fadeIn 2s ease;
+}
+
+body.light .sky:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 223, 70, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 223, 70, 0.5);
+}
+
+body.light .foreground {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, #32a852, #267a3b);
+  z-index: -1;
+  animation: growHills 2s ease;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes growHills {
+  from {
+    height: 0;
+  }
+  to {
+    height: 150px;
+  }
+}
+
+/* Общее для плавного перехода */
+body {
+  transition: background 0.8s ease, color 0.8s ease;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s ease;
+}
+
+/* Светлая тема */
+.theme-light {
+  background: linear-gradient(to bottom, #a8e7ff, #7ec8ff); /* Голубое небо */
+  color: #000;
+}
+
+.theme-light #theme-toggle {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Тёмная тема */
+.theme-dark {
+  background: url('images/stars.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.theme-dark #theme-toggle {
+  background-color: #000;
+  color: #fff;
+}

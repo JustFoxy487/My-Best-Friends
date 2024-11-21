@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="icon" href="favicon.png" type="image/png">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Best Friends</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Список друзей</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>Список моих лучших друзей</h1>
-  </header>
-  <main>
-    <div class="card" id="artem">
-      <img src="images/artem.png" alt="Артём">
-      <h3>Артём</h3>
-    </div>
-    <div class="card" id="sonya">
-      <img src="images/sonya.png" alt="Соня">
-      <h3>Соня</h3>
-    </div>
-    <div class="card" id="leonid">
-      <img src="images/leonid.png" alt="Леонид">
-      <h3>Леонид</h3>
-    </div>
-    <div class="card" id="stonix">
-      <img src="images/stonix.png" alt="Стоникс">
-      <h3>Стоникс</h3>
-    </div>
-    <div class="card" id="timofey">
-      <img src="images/timofey.jpg" alt="Тимофей">
-      <h3>Тимофей</h3>
-    </div>
-  </main>
-  <footer>
-    <div id="furry">
-      <img src="images/furry-icon.png" alt="Фурри" class="furry-icon">
-      <button id="furryButton">Нажми, если ты Фурри</button>
-    </div>
-  </footer>
-
-  <!-- Модальное окно -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <img id="modalImage" src="" alt="Фото друга" class="modal-image">
-      <h2 id="modalTitle">Заголовок</h2>
-      <p id="modalText">Здесь будет информация о вашем друге.</p>
+    <div class="friends">
+      <!-- Карточки друзей -->
+      <div class="friend-card" onclick="openPopup('Артём', 'Лучший из лучший, Артём Бизнесмен и СУКА КАКИЕ ЖЕ У НЕГО ЯЙЦА', 'images/artem.jpg')">
+        <img src="images/artem.jpg" alt="Артём" class="friend-photo">
+        <h2>Артём</h2>
+      </div>
+      <div class="friend-card" onclick="openPopup('Соня', 'Самая добрая и самая забавная!', 'images/sonya.jpg')">
+        <img src="images/sonya.jpg" alt="Соня" class="friend-photo">
+        <h2>Соня</h2>
+      </div>
+      <div class="friend-card" onclick="openPopup('Леонид', 'Гигачад и сигма', 'images/leonid.jpg')">
+        <img src="images/leonid.jpg" alt="Леонид" class="friend-photo">
+        <h2>Леонид</h2>
+      </div>
+      <div class="friend-card" onclick="openPopup('Стоникс', 'Он ебанутый, но хороший', 'images/stonix.jpg')">
+        <img src="images/stonix.jpg" alt="Стоникс" class="friend-photo">
+        <h2>Стоникс</h2>
+      </div>
+      <div class="friend-card" onclick="openPopup('Тимофей', 'Хрен неадекватный', 'images/timofey.jpg')">
+        <img src="images/timofey.jpg" alt="Тимофей" class="friend-photo">
+        <h2>Тимофей</h2>
+      </div>
     </div>
   </div>
+  
 
-  <script src="script.js"></script>
+  <!-- Кнопка "Фурри" и фото -->
+  <div class="furry-container">
+    <img src="images/furry-icon.jpg" alt="Фурри" class="furry-photo">
+    <button class="furry-button" onclick="openPopup('Филин', 'Крутой чудик, любит Фурри', 'images/furry.jpg')">
+      Нажми, если ты Фурри
+    </button>
+  </div>
+  <div class="theme-switcher" onclick="toggleTheme()">🌞</div>
+  <div class="sky"></div>
+  <div class="foreground"></div>
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="popup-close" onclick="closePopup()">&times;</span>
+      <img src="" alt="Фото друга" class="popup-photo" id="popupPhoto">
+      <h2 id="popupName"></h2>
+      <p id="popupDescription"></p>
+    </div>
+  </div>
 </body>
 </html>
